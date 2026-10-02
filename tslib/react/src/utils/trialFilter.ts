@@ -68,7 +68,7 @@ export class Target {
         return null
       }
       const value = trial.values[objectiveId]
-      if (value === Infinity || value === -Infinity) {
+      if (typeof value !== "number" || !Number.isFinite(value)) {
         return null
       }
       return value
